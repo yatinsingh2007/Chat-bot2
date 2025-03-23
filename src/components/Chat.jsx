@@ -5,12 +5,13 @@ import ReactMarkdown from "react-markdown";
 const Chat = ({name}) => {
     const [load,setLoad] = useState(true);
     const [arr,setArr] = useState([]);
+    const geminiKey = import.meta.env.VITE_GEMINI_API
     useEffect(() => {
         setTimeout(() => {
             setLoad(false)
         },2500)
         fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAcT9RK3AEReJZjfSN4BcSYMeTs10hS4t4`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -35,7 +36,7 @@ const Chat = ({name}) => {
         console.log(e);
         setArr((prevArr) => [...prevArr,e.target[0].value]);
         fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAcT9RK3AEReJZjfSN4BcSYMeTs10hS4t4`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

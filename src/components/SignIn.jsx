@@ -57,7 +57,7 @@ const SignIn = ({setLogIn,setName}) => {
               </div>
             </div>
           </div>
-          <footer className='text-start p-3 bg-gradient-to-t from-pink-500 via-red-500 to-yellow-500 text-white'>
+          <footer className='text-start p-3 bg-gradient-to-t from-pink-500 via-red-500 to-yellow-500 text-white w-screen'>
             <p>&copy;Copyrightclaim-2025</p>
           </footer>
       </div>

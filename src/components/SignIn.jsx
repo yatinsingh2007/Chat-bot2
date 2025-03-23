@@ -13,7 +13,7 @@ const SignIn = ({setLogIn,setName}) => {
               <h1 className="font-mono text-2xl text-indigo-900 drop-shadow-md text-center px-5">
                 <TypeAnimation
                   sequence={[
-                    "Step into the future with Neura-Chat... Sign in and let’s explore intelligence beyond limits!",
+                    "Step into the future with Neura-Chat... Sign in and let's explore intelligence beyond limits!",
                     1000,
                   ]}
                   wrapper="span"

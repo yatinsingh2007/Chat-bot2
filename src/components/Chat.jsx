@@ -66,7 +66,7 @@ const Chat = ({name}) => {
                 </div>
             </> : <>
             <div className='h-screen'>
-                <header className='text-start p-2 text-3xl'>
+                <header className='text-start p-2 text-3xl text-white'>
                     Start Chattting {name} !!!
                 </header>
                 <main className='h-96'>

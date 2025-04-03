@@ -79,15 +79,15 @@ const Chat = ({ name }) => {
                             Start Chatting {name} !!!
                         </header>
                         <main className='h-96'>
-                            <div className="rounded-lg shadow-lg backdrop-blur-md bg-white/30 border border-white/20 m-20 p-4 h-full overflow-auto flex flex-col">
-                                {arr.map((text, i) => (
-                                    <div key={i} className={`flex ${i % 2 === 0 ? "justify-start" : "justify-end"}`}>
-                                        <div className={`m-2 p-2 rounded-lg max-w-[75%] ${i % 2 === 0 ? "bg-[#37474F] text-white text-left" : "bg-white text-black text-right"}`}>
-                                            <ReactMarkdown>{text}</ReactMarkdown>
-                                        </div>
+                        <div className="rounded-lg m-20 p-4 h-full overflow-auto flex flex-col">
+                            {arr.map((text, i) => (
+                                <div key={i} className={`flex ${i % 2 === 0 ? "justify-start" : "justify-end"}`}>
+                                    <div className={`m-2 p-2 rounded-lg max-w-[75%] ${i % 2 === 0 ? "bg-[#37474F]/40 text-white/80 text-left" : "bg-white/10 text-white/70 text-right"} border border-white/10`}>
+                                        <ReactMarkdown>{text}</ReactMarkdown>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
+                        </div>
                         </main>
                         <div className='w-full flex justify-center'>
                             <form className='w-96 m-16 flex justify-between gap-4' onSubmit={startChat}>
@@ -96,7 +96,7 @@ const Chat = ({ name }) => {
                                 </div>
                                 <div className='flex justify-center items-center'>
                                     <button type='submit'>
-                                        <Send />
+                                        <Send className='text-white'/>
                                     </button>
                                 </div>
                             </form>

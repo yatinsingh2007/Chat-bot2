@@ -13,7 +13,7 @@ const SignIn = ({ setLogIn, setName }) => {
         
         <div className='flex flex-col text-center justify-center items-center w-full'>
           <div className='pt-36'>
-            <h1 className="font-mono text-2xl text-white drop-shadow-md px-5">
+            <h1 className="font-mono text-2xl text-white drop-shadow-md px-5 md:w-[50vw]">
               <TypeAnimation
                 sequence={[
                   "Step into the future with Neura-Chat... Sign in and let's explore intelligence beyond limits!",

@@ -1,13 +1,19 @@
-import { useState } from 'react'
 import './App.css'
-import Chat from './components/Chat'
-import SignIn from './components/SignIn'
+import { useState } from 'react';
+import Chat from './components/Chat';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
-  const [logIn ,setLogIn] = useState(false);
-  const [name,setName] = useState('');
+  const [name , setName] = useState(`admin`);
   return (
     <>
-      {!logIn ? <SignIn setLogIn={setLogIn} setName={setName} /> : <Chat name={name} />}
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<SignIn setName = {setName}/>} />
+          <Route path='/chat' element={<Chat name={name}/>} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

@@ -1,12 +1,11 @@
 import React from 'react';
-import Spline from '@splinetool/react-spline';
 import { Bot } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom'
 
-const SignIn = ({ setLogIn, setName }) => {
+const SignIn = ({setName}) => {
   return (
     <>
-      {/* Foreground Content */}
       <div className="relative z-10 flex flex-col justify-center items-center min-h-screen bg-gradient-to-br from-black via-gray-800 to-gray-300">
         <h1 className="text-3xl pt-3 text-white">Neura-Chat</h1>
         <p className="text-white">Powered by Gemini</p>
@@ -32,12 +31,12 @@ const SignIn = ({ setLogIn, setName }) => {
               <h1 className='pt-3 text-center text-black'>Sign-In</h1>
               <form onSubmit={(e) => {
                 e.preventDefault();
-                setLogIn(true);
-                setName(e.target[0].value);
               }}>
                 <div className='text-start pt-3'><label>Name</label></div>
                 <div className='p-[2px] bg-gradient-to-r from-black via-gray-800 to-gray-300 rounded-lg'>
-                  <input type='text' placeholder='Enter your Name' className='w-full px-4 py-2 bg-white text-black rounded-md outline-none' required/>
+                  <input type='text' placeholder='Enter your Name' className='w-full px-4 py-2 bg-white text-black rounded-md outline-none' onChange={(e) => {
+                    setName(e.target.value);
+                  }} required/>
                 </div>
 
                 <div className='text-start pt-3'><label>Email</label></div>
@@ -52,8 +51,13 @@ const SignIn = ({ setLogIn, setName }) => {
 
                 <div className='pt-5'>
                   <button className='px-6 py-3 text-white font-semibold bg-black/80 hover:bg-black rounded-xl shadow-lg hover:scale-105 transition duration-300'>
-                    Log In
+                    <Link to='/chat'>Sign In</Link>
                   </button>
+                </div>
+                <div className='pt-5'>
+                  <Link to='/chat' className='text-sm text-black/80 hover:text-black/50'>
+                    Continue as Guest
+                  </Link>
                 </div>
               </form>
             </div>
